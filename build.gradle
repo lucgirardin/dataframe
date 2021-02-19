@@ -6,7 +6,7 @@ buildscript {
 
         def repoFolder = new File(jupyterApiTCRepo)
         if(repoFolder.exists()) {
-            maven { url = repoFolder.toURI() }
+            maven { url repoFolder.toURI() }
         }
     }
 
@@ -39,7 +39,7 @@ repositories {
 
     def repoFolder = new File(jupyterApiTCRepo)
     if(repoFolder.exists()) {
-        maven { url = repoFolder.toURI() }
+        maven { url repoFolder.toURI() }
     }
 }
 
