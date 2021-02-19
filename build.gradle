@@ -20,7 +20,6 @@ buildscript {
 plugins {
     id "com.jfrog.bintray" version "1.8.1"
     id "org.jetbrains.kotlin.jvm" version "$kotlin_version"
-    id "org.jetbrains.kotlin.jupyter.api" version "$jupyterApiVersion"
 }
 
 apply plugin: 'kotlin'
@@ -28,6 +27,7 @@ apply plugin: 'org.jetbrains.dokka'
 apply plugin: 'application'
 apply plugin: 'maven'
 apply plugin: 'maven-publish'
+apply plugin: "org.jetbrains.kotlin.jupyter.api"
 
 // not neeeded but does not work without
 mainClassName = "foo.Bar" // not needed but does not work without
