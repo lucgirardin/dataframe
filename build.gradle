@@ -5,6 +5,8 @@ buildscript {
         mavenCentral()
 
         def repoFolder = new File(jupyterApiTCRepo)
+        println(repoFolder.absolutePath)
+        println(repoFolder.exists())
         if(repoFolder.exists()) {
             maven { url repoFolder.toURI() }
         }
