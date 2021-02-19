@@ -2,8 +2,12 @@ buildscript {
 
     repositories {
         maven { url 'https://dl.bintray.com/kotlin/dokka' }
-        maven { url 'https://kotlin.bintray.com/kotlin-datascience' }
         mavenCentral()
+
+        def repoFolder = new File(jupyterApiTCRepo)
+        if(repoFolder.exists()) {
+            maven { url = repoFolder.toURI() }
+        }
     }
 
     dependencies {
@@ -11,9 +15,6 @@ buildscript {
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
     }
 }
-
-
-
 
 plugins {
     id "com.jfrog.bintray" version "1.8.1"
@@ -34,6 +35,11 @@ repositories {
     mavenCentral()
     jcenter()
     maven { url 'https://kotlin.bintray.com/kotlin-datascience' }
+
+    def repoFolder = new File(jupyterApiTCRepo)
+    if(repoFolder.exists()) {
+        maven { url = repoFolder.toURI() }
+    }
 }
 
 configurations {
